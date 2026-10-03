@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeyDucks - Request a Quote</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* Left Panel - 20% */
+        .left-panel {
+            width: 20%;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            font-size: 60px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: #171717;
+            letter-spacing: 0.05em;
+            font-weight: 800;
+        }
+
+        .form-section h2 {
+            font-size: 20px;
+            color: #171717;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #171717;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #d0d0d0;
+            border-radius: 4px;
+            font-family: 'Arial', sans-serif;
+            font-size: 13px;
+            color: #171717;
+            background-color: #fafafa;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #171717;
+            background-color: #fff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #171717;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #333333;
+        }
+
+        .submit-btn:active {
+            background-color: #000000;
+        }
+
+        /* Right Panel - 80% */
+        .right-panel {
+            width: 80%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><rect fill="%23f0f0f0" width="1000" height="1000"/><text x="50%" y="50%" font-size="48" fill="%23999" text-anchor="middle" dominant-baseline="middle">Hero Image</text></svg>');
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-panel {
+                width: 100%;
+                height: auto;
+                padding: 30px 20px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .right-panel {
+                width: 100%;
+                height: 300px;
+            }
+
+            .logo h1 {
+                font-size: 20px;
+            }
+        }
+
+        /* Scrollbar styling */
+        .left-panel::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .left-panel::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .left-panel::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+
+        .left-panel::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <div class="logo">
+                <div class="logo-icon">🦆</div>
+                <h1>LUXEYDUCKS</h1>
+            </div>
+
+            <div class="form-section">
+                <h2>Request a Quote</h2>
+                <form id="quoteForm">
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact">Contact Name</label>
+                        <input type="text" id="contact" name="contact" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product">Product Interest</label>
+                        <select id="product" name="product" required>
+                            <option value="">-- Select a Product --</option>
+                            <option value="loose-diamonds">Loose Diamonds</option>
+                            <option value="engagement-rings">Engagement Rings</option>
+                            <option value="bridal-sets">Bridal Sets</option>
+                            <option value="necklaces">Necklaces</option>
+                            <option value="bracelets">Bracelets</option>
+                            <option value="earrings">Earrings</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message / Notes</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your requirements..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Quote Request</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel"></div>
+    </div>
+
+    <script>
+        // Form submission handler (placeholder - email address to be added later)
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                company: document.getElementById('company').value,
+                contact: document.getElementById('contact').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                product: document.getElementById('product').value,
+                message: document.getElementById('message').value
+            };
+            
+            console.log('Quote Request Submitted:', formData);
+            alert('Thank you for your quote request! We will contact you shortly.');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
