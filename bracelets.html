@@ -5,45 +5,132 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bracelets</title>
   <style>
+    :root {
+      --bg: #f4efe8;
+      --panel: #ffffff;
+      --ink: #171717;
+      --muted: #545454;
+      --line: #d9d0c7;
+      --accent: #1f3e5d;
+      --gold: #c6a36b;
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f7f3ef;
-      color: #1d1d1d;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f2ec;
+      color: var(--ink);
     }
     .wrap {
       max-width: 980px;
-      margin: 40px auto;
-      padding: 24px;
+      margin: 0 auto;
+      padding: 48px 22px 70px;
     }
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 12px;
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
     }
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
+    .brand {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .nav a {
+      text-decoration: none;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      background: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    .nav a.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
     }
     .card {
-      background: white;
-      border: 1px solid #d9d1ca;
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+      padding: 28px;
     }
-    a {
-      color: #1d4d8f;
-      text-decoration: none;
-      font-weight: bold;
+    h1 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      line-height: 1.06;
+    }
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1.04rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 26px;
+    }
+    .mini {
+      background: #faf7f3;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .mini h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+    .mini p {
+      margin: 0;
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
   <div class="wrap">
+    <div class="topbar">
+      <div class="brand">LuxeyDucks</div>
+      <div class="nav">
+        <a href="index.html">Home</a>
+        <a class="primary" href="loose-diamonds-1-6-carat.html">Loose Diamonds</a>
+        <a href="bracelets.html">Bracelets</a>
+      </div>
+    </div>
+
     <div class="card">
       <h1>Bracelets</h1>
-      <p>Welcome to the bracelets page.</p>
-      <p><a href="index.html">Back to home</a></p>
+      <p>Welcome to the bracelets page. This section is ready for your curated product collection, pricing notes, or supplier information.</p>
+      <p>Use this page as a category hub while you expand the rest of the portal with additional product lines and sourcing tools.</p>
+
+      <div class="grid">
+        <div class="mini">
+          <h3>Category</h3>
+          <p>Bracelets</p>
+        </div>
+        <div class="mini">
+          <h3>Status</h3>
+          <p>Ready for content</p>
+        </div>
+        <div class="mini">
+          <h3>Next Step</h3>
+          <p>Add product details and pricing.</p>
+        </div>
+      </div>
     </div>
   </div>
 </body>
