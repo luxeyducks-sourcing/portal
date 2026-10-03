@@ -3,167 +3,189 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LuxeyDucks | Homepage</title>
+  <title>LuxeyDucks | Partner Pricing Portal</title>
   <style>
     :root {
-      --bg: #f3f0ea;
-      --panel: #ffffff;
-      --ink: #171717;
-      --muted: #535353;
-      --line: #858585;
-      --deep: #202020;
-      --entry: #fff2b8;
-      --soft: #f3f0ea;
-      --shadow: 0 12px 28px rgba(10, 16, 23, .08);
+      color-scheme: light;
+      --charcoal: #25231f;
+      --cream: #f8f5ef;
+      --beige: #d9cbb8;
+      --gold: #c7a66a;
+      --muted: #c8c0b4;
     }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
+      color: var(--cream);
+      background: var(--charcoal);
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #f6f1ea 0%, #efe8df 100%);
-      color: var(--ink);
     }
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 52px 22px 80px;
-    }
-    .hero {
-      background: rgba(255,255,255,0.92);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      box-shadow: var(--shadow);
-      padding: 42px 30px;
-    }
-    .eyebrow {
-      display: inline-block;
-      background: var(--soft);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 7px 12px;
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: bold;
-      margin-bottom: 18px;
-    }
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(2.5rem, 4vw, 4.2rem);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-    }
-    p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 1.04rem;
-    }
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
-    }
-    .nav a {
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px 22px;
-      border-radius: 12px;
-      font-weight: 700;
-      min-width: 200px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .nav a:hover {
-      transform: translateY(-1px);
-    }
-    .nav a.primary {
-      background: linear-gradient(180deg, var(--ink) 0%, var(--deep) 100%);
-      color: white;
-      box-shadow: 0 7px 18px rgba(23, 23, 23, 0.25);
-    }
-    .nav a.secondary {
-      background: white;
-      border: 1px solid var(--line);
-      color: var(--ink);
-    }
-    .grid {
-      margin-top: 32px;
+
+    .layout {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 18px;
+      grid-template-columns: 20% 80%;
+      min-height: 100vh;
+      min-height: 100svh;
     }
-    .card {
-      background: rgba(255,255,255,0.92);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      padding: 22px 20px;
+
+    .sidebar {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      padding: clamp(1.25rem, 2.5vw, 2.75rem);
+      background: var(--charcoal);
     }
-    .card h2 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 1.35rem;
+
+    .wordmark {
+      margin: 0 0 clamp(2.5rem, 8vh, 5rem);
+      color: var(--cream);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.15rem, 1.8vw, 1.6rem);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
     }
-    .card p {
+
+    h1 {
+      margin: 0 0 0.85rem;
+      color: var(--cream);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.45rem, 2.3vw, 2.1rem);
+      font-weight: 400;
+      line-height: 1.12;
+    }
+
+    .description {
       margin: 0;
+      color: var(--muted);
+      font-size: clamp(0.76rem, 1vw, 0.92rem);
+      line-height: 1.65;
     }
-    @media (max-width: 640px) {
-      .nav a {
-        width: 100%;
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      margin-top: clamp(1.75rem, 5vh, 3rem);
+      border-top: 1px solid rgba(199, 166, 106, 0.55);
+    }
+
+    nav a {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(199, 166, 106, 0.38);
+      color: var(--cream);
+      font-size: clamp(0.76rem, 1vw, 0.92rem);
+      line-height: 1.35;
+      text-decoration: none;
+      transition: color 180ms ease, transform 180ms ease;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--gold);
+      transform: translateX(4px);
+    }
+
+    nav a:focus-visible {
+      outline: 1px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 2rem;
+      color: var(--muted);
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-image {
+      min-width: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      overflow: hidden;
+      background: var(--beige);
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: 100vh;
+      height: 100svh;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @media (max-width: 819px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        min-height: 42vh;
+        min-height: 42svh;
+        max-height: 560px;
+      }
+
+      .hero-image img {
+        height: 42vh;
+        height: 42svh;
+        max-height: 560px;
+      }
+
+      .sidebar {
+        padding: 2rem clamp(1.25rem, 6vw, 3rem);
+      }
+
+      .wordmark {
+        margin-bottom: 2.5rem;
+      }
+
+      h1 {
+        font-size: clamp(1.8rem, 7vw, 2.4rem);
+      }
+
+      .description,
+      nav a {
+        font-size: 0.95rem;
+      }
+
+      nav {
+        margin-top: 1.75rem;
+      }
+
+      footer {
+        margin-top: 2.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      nav a {
+        transition: none;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <section class="hero">
-      <div class="eyebrow">LuxeyDucks Portal</div>
-      <h1>Luxury sourcing, pricing, and product discovery.</h1>
-      <p>
-        Welcome to the LuxeyDucks sourcing portal. From diamond pricing and quote tools to product categories like bridal,
-        rings, necklaces, earrings, and bracelets, this site is designed to give your partners a clean, premium experience.
-      </p>
-
-      <div class="nav">
-        <a class="primary" href="loose-diamonds-1-6-carat.html">Loose Diamonds 1–6 Carat</a>
-        <a class="secondary" href="bridal.html">Bridal</a>
-        <a class="secondary" href="rings.html">Rings</a>
-        <a class="secondary" href="necklaces.html">Necklaces</a>
-        <a class="secondary" href="earrings.html">Earrings</a>
-        <a class="secondary" href="bracelets.html">Bracelets</a>
-      </div>
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="wordmark">LuxeyDucks</div>
+      <h1>Partner Pricing Portal</h1>
+      <p class="description">A private source portal for partners to submit pricing to LuxeyDucks. Select a category to begin.</p>
+      <nav aria-label="Product categories">
+        <a href="loose-diamonds-1-6-carat.html">Loose Diamonds 1–6 Carat</a>
+        <a href="bridal.html">Bridal</a>
+        <a href="rings.html">Rings</a>
+        <a href="necklaces.html">Necklaces</a>
+        <a href="earrings.html">Earrings</a>
+        <a href="bracelets.html">Bracelets</a>
+      </nav>
+      <footer>© LuxeyDucks · Private partner portal</footer>
+    </aside>
+    <section class="hero-image" aria-label="Featured emerald-cut diamond">
+      <img src="BE1343_yellow_Emerald_top_3_carat.png" alt="Three-carat yellow emerald-cut diamond" />
     </section>
-
-    <div class="grid">
-      <article class="card">
-        <h2>Loose Diamonds</h2>
-        <p>Use the pricing and supply quote form for 1–6 carat loose diamond sourcing.</p>
-      </article>
-      <article class="card">
-        <h2>Bridal</h2>
-        <p>Review and request custom bridal pieces with complete design and fit specifications.</p>
-      </article>
-      <article class="card">
-        <h2>Rings</h2>
-        <p>Browse engagement, statement, and custom ring requests with style and sizing details.</p>
-      </article>
-      <article class="card">
-        <h2>Necklaces</h2>
-        <p>Explore custom pendant, layering, and statement necklace sourcing requests.</p>
-      </article>
-      <article class="card">
-        <h2>Earrings</h2>
-        <p>Discover stud, drop, and statement earring requests built for premium sourcing workflows.</p>
-      </article>
-      <article class="card">
-        <h2>Bracelets</h2>
-        <p>Explore diamond bracelets and custom wrist pieces for premium product discovery.</p>
-      </article>
-    </div>
-  </div>
+  </main>
 </body>
 </html>
