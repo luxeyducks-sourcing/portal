@@ -3,135 +3,324 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bracelets</title>
+  <title>LuxeyDucks | Earrings</title>
   <style>
     :root {
-      --bg: #f4efe8;
+      --bg: #f3f0ea;
       --panel: #ffffff;
       --ink: #171717;
       --muted: #545454;
-      --line: #d9d0c7;
-      --accent: #1f3e5d;
-      --gold: #c6a36b;
+      --line: #858585;
+      --deep: #202020;
+      --entry: #fff2b8;
+      --soft: #f3f0ea;
+      --shadow: 0 12px 26px rgba(18, 18, 18, 0.06);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f7f2ec;
+      background: linear-gradient(180deg, #f3f0ea 0%, #efeae3 100%);
       color: var(--ink);
     }
-    .wrap {
-      max-width: 980px;
+    .container {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 48px 22px 70px;
+      padding: 42px 22px 80px;
     }
     .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 12px;
-      margin-bottom: 24px;
       flex-wrap: wrap;
+      margin-bottom: 22px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
     }
     .brand {
-      font-size: 1.1rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       font-weight: bold;
       color: var(--ink);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
     }
     .nav {
       display: flex;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 10px;
     }
     .nav a {
       text-decoration: none;
-      color: var(--ink);
-      border: 1px solid var(--line);
       background: white;
-      padding: 10px 14px;
+      border: 1px solid var(--line);
+      color: var(--ink);
       border-radius: 10px;
-      font-weight: 600;
+      padding: 10px 14px;
+      font-weight: 700;
+      display: inline-block;
     }
     .nav a.primary {
-      background: var(--accent);
+      background: var(--deep);
       color: white;
-      border-color: var(--accent);
+      border-color: var(--deep);
     }
-    .card {
-      background: var(--panel);
+    .hero {
+      background: white;
       border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
       padding: 28px;
+      margin-bottom: 24px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #8a6f47;
+      font-size: 11px;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
     h1 {
-      margin-top: 0;
-      margin-bottom: 14px;
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-      line-height: 1.06;
+      margin: 0 0 12px;
+      font-size: clamp(2.3rem, 4vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
     }
-    p {
-      margin: 0 0 16px;
+    .lead {
+      margin: 0;
       color: var(--muted);
       line-height: 1.7;
-      font-size: 1.04rem;
+      max-width: 900px;
     }
-    .grid {
+    .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 18px;
-      margin-top: 26px;
+      margin: 22px 0 28px;
     }
-    .mini {
-      background: #faf7f3;
+    .photo-wrap {
+      background: white;
       border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
     }
-    .mini h3 {
-      margin: 0 0 8px;
-      font-size: 1.1rem;
+    .photo-wrap img {
+      display: block;
+      width: 100%;
+      height: 275px;
+      object-fit: cover;
+      background: #f6f4f2;
     }
-    .mini p {
-      margin: 0;
-      color: var(--muted);
+    figcaption {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #725d35;
+      background: rgba(255,255,255,0.9);
+      padding: 8px 10px;
+      border-top: 1px solid var(--line);
+      width: 100%;
+    }
+    .form-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+    .form-card h2 {
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .field label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #534d44;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 1rem;
+      background: #fff;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .submit {
+      margin-top: 24px;
+      padding: 14px 20px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--deep);
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    @media (max-width: 640px) {
+      .nav {
+        width: 100%;
+      }
+      .nav a {
+        flex: 1 1 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="container">
     <div class="topbar">
       <div class="brand">LuxeyDucks</div>
       <div class="nav">
         <a href="index.html">Home</a>
-        <a class="primary" href="loose-diamonds-1-6-carat.html">Loose Diamonds</a>
+        <a href="loose-diamonds-1-6-carat.html">Loose Diamonds</a>
+        <a href="bridal.html">Bridal</a>
+        <a href="rings.html">Rings</a>
+        <a href="necklaces.html">Necklaces</a>
+        <a class="primary" href="earrings.html">Earrings</a>
         <a href="bracelets.html">Bracelets</a>
       </div>
     </div>
 
-    <div class="card">
-      <h1>Bracelets</h1>
-      <p>Welcome to the bracelets page. This section is ready for your curated product collection, pricing notes, or supplier information.</p>
-      <p>Use this page as a category hub while you expand the rest of the portal with additional product lines and sourcing tools.</p>
+    <section class="hero">
+      <div class="eyebrow">Earrings Collection</div>
+      <h1>Custom earring request form.</h1>
+      <p class="lead">
+        Use this page to request custom earrings, drops, studs, and statement pieces. It follows the same polished category pattern as Bridal, Rings, and Necklaces so the portal feels consistent and premium across every collection.
+      </p>
+    </section>
 
-      <div class="grid">
-        <div class="mini">
-          <h3>Category</h3>
-          <p>Bracelets</p>
-        </div>
-        <div class="mini">
-          <h3>Status</h3>
-          <p>Ready for content</p>
-        </div>
-        <div class="mini">
-          <h3>Next Step</h3>
-          <p>Add product details and pricing.</p>
-        </div>
-      </div>
+    <div class="gallery">
+      <figure class="photo-wrap">
+        <img src="BE1343_yellow_Emerald_top_3_carat.png" alt="Earrings front view" />
+        <figcaption>Front view</figcaption>
+      </figure>
+      <figure class="photo-wrap">
+        <img src="0f0e3823-3894-4c07-9985-78c7b2057884.png" alt="Earrings side view left" />
+        <figcaption>Side profile left</figcaption>
+      </figure>
+      <figure class="photo-wrap">
+        <img src="941fe017-424a-460e-ba7f-79deaa9e1bf5.png" alt="Earrings side view right" />
+        <figcaption>Side profile right</figcaption>
+      </figure>
+      <figure class="photo-wrap">
+        <img src="a38b4456-17b0-4b7f-86af-cdc172c8886c.png" alt="Earrings top view" />
+        <figcaption>Top view</figcaption>
+      </figure>
+      <figure class="photo-wrap">
+        <img src="e64519a4-2e9f-4f3d-9f20-c614c5bfa031.png" alt="Earrings detail close-up" />
+        <figcaption>Detail close-up</figcaption>
+      </figure>
     </div>
+
+    <section class="form-card">
+      <h2>Earring product request</h2>
+      <form>
+        <div class="grid">
+          <div class="field">
+            <label for="customer">Customer name</label>
+            <input id="customer" type="text" placeholder="Enter customer name" />
+          </div>
+          <div class="field">
+            <label for="category">Earring category</label>
+            <select id="category">
+              <option>Stud earrings</option>
+              <option>Drop earrings</option>
+              <option>Statement earrings</option>
+              <option>Custom earrings</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="metal">Metal</label>
+            <select id="metal">
+              <option>14K yellow gold</option>
+              <option>14K white gold</option>
+              <option>14K rose gold</option>
+              <option>18K yellow gold</option>
+              <option>Platinum</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="style">Style</label>
+            <input id="style" type="text" placeholder="e.g. halo stud, drop, tennis" />
+          </div>
+          <div class="field">
+            <label for="stone">Stone type</label>
+            <select id="stone">
+              <option>Diamond</option>
+              <option>Ruby</option>
+              <option>Sapphire</option>
+              <option>Emerald</option>
+              <option>Custom stone</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="drop-length">Drop length</label>
+            <input id="drop-length" type="text" placeholder="e.g. 0.75 in, 1.5 in" />
+          </div>
+          <div class="field">
+            <label for="budget">Budget range</label>
+            <input id="budget" type="text" placeholder="e.g. $1,000-$5,000" />
+          </div>
+          <div class="field">
+            <label for="timeline">Target timeline</label>
+            <input id="timeline" type="text" placeholder="e.g. 3-5 weeks" />
+          </div>
+          <div class="field">
+            <label for="approval">Approval stage</label>
+            <select id="approval">
+              <option>Initial concept</option>
+              <option>Approved design</option>
+              <option>Awaiting revision</option>
+              <option>Ready for production</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="field">
+            <label for="details">Product details</label>
+            <textarea id="details" placeholder="List stone size, setting style, earring shape, metal finish, matching pair details, and custom requirements."></textarea>
+          </div>
+          <div class="field">
+            <label for="notes">Customer notes</label>
+            <textarea id="notes" placeholder="Any notes on styling, day-to-evening wear, gifting, or preferred silhouette."></textarea>
+          </div>
+        </div>
+
+        <button class="submit" type="submit">Submit product request</button>
+      </form>
+    </section>
   </div>
 </body>
 </html>

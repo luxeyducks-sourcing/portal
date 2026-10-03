@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LuxeyDucks | Rings</title>
+  <title>LuxeyDucks | Bridal</title>
   <style>
     :root {
-      --bg: #f5f1eb;
+      --bg: #f3f0ea;
       --panel: #ffffff;
       --ink: #171717;
       --muted: #545454;
-      --line: #dccfb5;
-      --accent: #1d3d5a;
-      --accent-2: #c9a66c;
-      --soft: #f4efe7;
+      --line: #858585;
+      --deep: #202020;
+      --entry: #fff2b8;
+      --soft: #f3f0ea;
       --shadow: 0 12px 26px rgba(18, 18, 18, 0.06);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #f8f3ee 0%, #f1e9e0 100%);
+      background: linear-gradient(180deg, #f3f0ea 0%, #efeae3 100%);
       color: var(--ink);
     }
     .container {
@@ -61,9 +61,9 @@
       display: inline-block;
     }
     .nav a.primary {
-      background: var(--accent);
+      background: var(--deep);
       color: white;
-      border-color: var(--accent);
+      border-color: var(--deep);
     }
     .hero {
       background: white;
@@ -157,7 +157,7 @@
     .field select,
     .field textarea {
       width: 100%;
-      border: 1px solid #cdbfa9;
+      border: 1px solid var(--line);
       border-radius: 10px;
       padding: 12px 14px;
       font-size: 1rem;
@@ -180,7 +180,7 @@
       padding: 14px 20px;
       border: 0;
       border-radius: 12px;
-      background: linear-gradient(180deg, var(--accent) 0%, #112a43 100%);
+      background: var(--deep);
       color: white;
       font-weight: 700;
       font-size: 1rem;
@@ -204,45 +204,47 @@
       <div class="nav">
         <a href="index.html">Home</a>
         <a href="loose-diamonds-1-6-carat.html">Loose Diamonds</a>
-        <a href="bridal.html">Bridal</a>
-        <a class="primary" href="rings.html">Rings</a>
+        <a class="primary" href="bridal.html">Bridal</a>
+        <a href="rings.html">Rings</a>
+        <a href="necklaces.html">Necklaces</a>
+        <a href="earrings.html">Earrings</a>
         <a href="bracelets.html">Bracelets</a>
       </div>
     </div>
 
     <section class="hero">
-      <div class="eyebrow">Rings Collection</div>
-      <h1>Custom ring request form.</h1>
+      <div class="eyebrow">Bridal Collection</div>
+      <h1>Tapered solitaire bridal request.</h1>
       <p class="lead">
-        Use this page to request custom ring designs, engagement rings, statement rings, or wedding pieces. This category follows the same premium structure as the bridal page, with a consistent set of product views and an easy-to-use product request workflow.
+        Use this request form to capture key details for bespoke bridal designs, including ring style, metal, diamond criteria, finger size, and customer notes. The form is designed to be reusable across product categories while keeping the LuxeyDucks presentation polished and premium.
       </p>
     </section>
 
     <div class="gallery">
       <figure class="photo-wrap">
-        <img src="BE1343_yellow_Emerald_top_3_carat.png" alt="Ring front view" />
+        <img src="BE1343_yellow_Emerald_top_3_carat.png" alt="Bridal front view" />
         <figcaption>Front view</figcaption>
       </figure>
       <figure class="photo-wrap">
-        <img src="0f0e3823-3894-4c07-9985-78c7b2057884.png" alt="Ring side view left" />
+        <img src="0f0e3823-3894-4c07-9985-78c7b2057884.png" alt="Bridal side view left" />
         <figcaption>Side profile left</figcaption>
       </figure>
       <figure class="photo-wrap">
-        <img src="941fe017-424a-460e-ba7f-79deaa9e1bf5.png" alt="Ring side view right" />
+        <img src="941fe017-424a-460e-ba7f-79deaa9e1bf5.png" alt="Bridal side view right" />
         <figcaption>Side profile right</figcaption>
       </figure>
       <figure class="photo-wrap">
-        <img src="a38b4456-17b0-4b7f-86af-cdc172c8886c.png" alt="Ring top view" />
+        <img src="a38b4456-17b0-4b7f-86af-cdc172c8886c.png" alt="Bridal top view" />
         <figcaption>Top view</figcaption>
       </figure>
       <figure class="photo-wrap">
-        <img src="e64519a4-2e9f-4f3d-9f20-c614c5bfa031.png" alt="Ring detail close-up" />
+        <img src="e64519a4-2e9f-4f3d-9f20-c614c5bfa031.png" alt="Bridal detail close-up" />
         <figcaption>Detail close-up</figcaption>
       </figure>
     </div>
 
     <section class="form-card">
-      <h2>Ring product request</h2>
+      <h2>Product request form</h2>
       <form>
         <div class="grid">
           <div class="field">
@@ -250,12 +252,12 @@
             <input id="customer" type="text" placeholder="Enter customer name" />
           </div>
           <div class="field">
-            <label for="category">Ring category</label>
+            <label for="category">Category</label>
             <select id="category">
+              <option>Bridal ring</option>
+              <option>Wedding set</option>
               <option>Engagement ring</option>
-              <option>Wedding band</option>
-              <option>Statement ring</option>
-              <option>Custom ring</option>
+              <option>Custom bridal</option>
             </select>
           </div>
           <div class="field">
@@ -269,8 +271,8 @@
             </select>
           </div>
           <div class="field">
-            <label for="style">Style</label>
-            <input id="style" type="text" placeholder="e.g. tapered solitaire, halo, pavé" />
+            <label for="band-style">Band / setting style</label>
+            <input id="band-style" type="text" placeholder="e.g. tapered solitaire, halo, pavé" />
           </div>
           <div class="field">
             <label for="stone">Stone type</label>
@@ -285,7 +287,7 @@
           </div>
           <div class="field">
             <label for="carat">Stone size / carat</label>
-            <input id="carat" type="text" placeholder="e.g. 1.50 ct, 2.00 ct" />
+            <input id="carat" type="text" placeholder="e.g. 1.50 ct, 3.10 ct" />
           </div>
           <div class="field">
             <label for="finger-size">Finger size</label>
@@ -293,7 +295,7 @@
           </div>
           <div class="field">
             <label for="budget">Budget range</label>
-            <input id="budget" type="text" placeholder="e.g. $2,500-$10,000" />
+            <input id="budget" type="text" placeholder="e.g. $3,000-$8,000" />
           </div>
           <div class="field">
             <label for="timeline">Target timeline</label>
@@ -313,11 +315,11 @@
         <div class="two-col">
           <div class="field">
             <label for="details">Product details</label>
-            <textarea id="details" placeholder="List stone specs, band width, gallery style, engraving, matching set, and any special requirements."></textarea>
+            <textarea id="details" placeholder="List stone specs, shape, band thickness, gallery style, engraving details, and any special requirements."></textarea>
           </div>
           <div class="field">
             <label for="notes">Customer notes</label>
-            <textarea id="notes" placeholder="Any fit notes, special requests, desired mood, sizing preferences, or additional remarks."></textarea>
+            <textarea id="notes" placeholder="Any fit notes, special requests, preference for vintage/modern styling, or additional remarks."></textarea>
           </div>
         </div>
 
