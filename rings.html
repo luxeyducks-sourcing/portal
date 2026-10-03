@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LuxeyDucks | Bridal</title>
+  <title>LuxeyDucks | Rings</title>
   <style>
     :root {
       --bg: #f3f0ea;
@@ -204,19 +204,22 @@
       <div class="nav">
         <a href="index.html">Home</a>
         <a href="loose-diamonds-1-6-carat.html">Loose Diamonds</a>
-        <a class="primary" href="bridal.html">Bridal</a>
-        <a href="rings.html">Rings</a>
+        <a href="bridal.html">Bridal</a>
+        <a class="primary" href="rings.html">Rings</a>
         <a href="necklaces.html">Necklaces</a>
         <a href="earrings.html">Earrings</a>
         <a href="bracelets.html">Bracelets</a>
       </div>
     </div>
+    <p style="margin:12px 0;padding:12px 16px;border:1px solid #b9d7c2;border-radius:8px;background:#edf7ef;color:#245b35;font-weight:700;">
+      ✓ Secure connection: when accessed over HTTPS, information is encrypted in transit. Form entries are not sent automatically.
+    </p>
 
     <section class="hero">
-      <div class="eyebrow">Bridal Collection</div>
-      <h1>Tapered solitaire bridal request.</h1>
+      <div class="eyebrow">Rings Collection</div>
+      <h1>Custom ring request form.</h1>
       <p class="lead">
-        Use this request form to capture key details for bespoke bridal designs, including ring style, metal, diamond criteria, finger size, and customer notes. The form is designed to be reusable across product categories while keeping the LuxeyDucks presentation polished and premium.
+        Use this form to request engagement, wedding, statement, and custom rings. Include the customer’s ring style, metal, stone specifications, finger size, and budget.
       </p>
     </section>
 
@@ -245,7 +248,8 @@
 
     <section class="form-card">
       <h2>Product request form</h2>
-      <form>
+      <p style="margin:0 0 16px;color:#535353;">Enter the customer’s ring style, metal, stone shape and size, finger size, budget, and target timeline. Add design details or customer notes; all fields are optional. This form is not connected to a request delivery service, so entries are not sent when you click the button.</p>
+      <form onsubmit="event.preventDefault(); document.getElementById('send-status').hidden = false;">
         <div class="grid">
           <div class="field">
             <label for="customer">Customer name</label>
@@ -323,7 +327,8 @@
           </div>
         </div>
 
-        <button class="submit" type="submit">Submit product request</button>
+        <button class="submit" type="submit">Send Quote Request</button>
+        <p id="send-status" role="status" hidden style="margin:12px 0 0;color:#8a2f24;font-weight:700;">This request was not sent. The form is not connected to a delivery service; contact your LuxeyDucks representative to submit it.</p>
       </form>
     </section>
   </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LuxeyDucks | Earrings</title>
+  <title>LuxeyDucks | Bracelets</title>
   <style>
     :root {
       --bg: #f3f0ea;
@@ -207,57 +207,61 @@
         <a href="bridal.html">Bridal</a>
         <a href="rings.html">Rings</a>
         <a href="necklaces.html">Necklaces</a>
-        <a class="primary" href="earrings.html">Earrings</a>
-        <a href="bracelets.html">Bracelets</a>
+        <a href="earrings.html">Earrings</a>
+        <a class="primary" href="bracelets.html">Bracelets</a>
       </div>
     </div>
+    <p style="margin:12px 0;padding:12px 16px;border:1px solid #b9d7c2;border-radius:8px;background:#edf7ef;color:#245b35;font-weight:700;">
+      ✓ Secure connection: when accessed over HTTPS, information is encrypted in transit. Form entries are not sent automatically.
+    </p>
 
     <section class="hero">
-      <div class="eyebrow">Earrings Collection</div>
-      <h1>Custom earring request form.</h1>
+      <div class="eyebrow">Bracelets Collection</div>
+      <h1>Custom bracelet request form.</h1>
       <p class="lead">
-        Use this page to request custom earrings, drops, studs, and statement pieces. It follows the same polished category pattern as Bridal, Rings, and Necklaces so the portal feels consistent and premium across every collection.
+        Use this page to request custom bracelets, bangles, tennis bracelets, and chain styles. Include the customer’s preferred fit, design, and budget.
       </p>
     </section>
 
     <div class="gallery">
       <figure class="photo-wrap">
-        <img src="BE1343_yellow_Emerald_top_3_carat.png" alt="Earrings front view" />
+        <img src="BE1343_yellow_Emerald_top_3_carat.png" alt="Bracelet front view" />
         <figcaption>Front view</figcaption>
       </figure>
       <figure class="photo-wrap">
-        <img src="0f0e3823-3894-4c07-9985-78c7b2057884.png" alt="Earrings side view left" />
+        <img src="0f0e3823-3894-4c07-9985-78c7b2057884.png" alt="Bracelet side view left" />
         <figcaption>Side profile left</figcaption>
       </figure>
       <figure class="photo-wrap">
-        <img src="941fe017-424a-460e-ba7f-79deaa9e1bf5.png" alt="Earrings side view right" />
+        <img src="941fe017-424a-460e-ba7f-79deaa9e1bf5.png" alt="Bracelet side view right" />
         <figcaption>Side profile right</figcaption>
       </figure>
       <figure class="photo-wrap">
-        <img src="a38b4456-17b0-4b7f-86af-cdc172c8886c.png" alt="Earrings top view" />
+        <img src="a38b4456-17b0-4b7f-86af-cdc172c8886c.png" alt="Bracelet top view" />
         <figcaption>Top view</figcaption>
       </figure>
       <figure class="photo-wrap">
-        <img src="e64519a4-2e9f-4f3d-9f20-c614c5bfa031.png" alt="Earrings detail close-up" />
+        <img src="e64519a4-2e9f-4f3d-9f20-c614c5bfa031.png" alt="Bracelet detail close-up" />
         <figcaption>Detail close-up</figcaption>
       </figure>
     </div>
 
     <section class="form-card">
-      <h2>Earring product request</h2>
-      <form>
+      <h2>Bracelet product request</h2>
+      <p style="margin:0 0 16px;color:#535353;">Enter the customer’s bracelet style, metal, stone, wrist or bracelet length, budget, timeline, and any design notes. All fields are optional. This form is not connected to a request delivery service, so entries are not sent when you click the button.</p>
+      <form onsubmit="event.preventDefault(); document.getElementById('send-status').hidden = false;">
         <div class="grid">
           <div class="field">
             <label for="customer">Customer name</label>
             <input id="customer" type="text" placeholder="Enter customer name" />
           </div>
           <div class="field">
-            <label for="category">Earring category</label>
+            <label for="category">Bracelet category</label>
             <select id="category">
-              <option>Stud earrings</option>
-              <option>Drop earrings</option>
-              <option>Statement earrings</option>
-              <option>Custom earrings</option>
+              <option>Chain bracelet</option>
+              <option>Tennis bracelet</option>
+              <option>Bangle</option>
+              <option>Custom bracelet</option>
             </select>
           </div>
           <div class="field">
@@ -271,8 +275,8 @@
             </select>
           </div>
           <div class="field">
-            <label for="style">Style</label>
-            <input id="style" type="text" placeholder="e.g. halo stud, drop, tennis" />
+            <label for="style">Bracelet style</label>
+            <input id="style" type="text" placeholder="e.g. tennis bracelet, bangle, chain" />
           </div>
           <div class="field">
             <label for="stone">Stone type</label>
@@ -285,8 +289,8 @@
             </select>
           </div>
           <div class="field">
-            <label for="drop-length">Drop length</label>
-            <input id="drop-length" type="text" placeholder="e.g. 0.75 in, 1.5 in" />
+            <label for="drop-length">Wrist / bracelet length</label>
+            <input id="drop-length" type="text" placeholder="e.g. 6.5 in, 7 in" />
           </div>
           <div class="field">
             <label for="budget">Budget range</label>
@@ -309,8 +313,8 @@
 
         <div class="two-col">
           <div class="field">
-            <label for="details">Product details</label>
-            <textarea id="details" placeholder="List stone size, setting style, earring shape, metal finish, matching pair details, and custom requirements."></textarea>
+            <label for="details">Bracelet design details</label>
+            <textarea id="details" placeholder="Include stone size, setting, bracelet width, clasp, metal finish, and any custom requirements."></textarea>
           </div>
           <div class="field">
             <label for="notes">Customer notes</label>
@@ -318,7 +322,8 @@
           </div>
         </div>
 
-        <button class="submit" type="submit">Submit product request</button>
+        <button class="submit" type="submit">Send Quote Request</button>
+        <p id="send-status" role="status" hidden style="margin:12px 0 0;color:#8a2f24;font-weight:700;">This request was not sent. The form is not connected to a delivery service; contact your LuxeyDucks representative to submit it.</p>
       </form>
     </section>
   </div>
