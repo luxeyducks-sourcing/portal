@@ -1,345 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuxeyDucks - Request a Quote</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            height: 100vh;
-            display: flex;
-            background-color: #f5f5f5;
-        }
-
-        .container {
-            display: flex;
-            width: 100%;
-            height: 100vh;
-        }
-
-        /* Left Panel - 30% */
-        .left-panel {
-            width: 30%;
-            background-color: #ffffff;
-            padding: 40px 30px;
-            overflow-y: auto;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .logo-image {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
-            margin: 0 auto 15px;
-            border-radius: 4px;
-            object-fit: cover;
-        }
-
-        .logo h1 {
-            font-size: 24px;
-            color: #171717;
-            letter-spacing: 0.05em;
-            font-weight: 800;
-        }
-
-        /* Navigation */
-        .navigation {
-            margin-bottom: 40px;
-        }
-
-        .navigation h3 {
-            font-size: 12px;
-            color: #171717;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-            font-weight: 800;
-        }
-
-        .navigation ul {
-            list-style: none;
-        }
-
-        .navigation li {
-            margin-bottom: 10px;
-        }
-
-        .navigation a {
-            text-decoration: none;
-            color: #171717;
-            font-size: 14px;
-            font-weight: 600;
-            padding: 8px 12px;
-            border-radius: 4px;
-            display: block;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .navigation a:hover {
-            background-color: #f0f0f0;
-            color: #000;
-        }
-
-        .navigation a.active {
-            background-color: #171717;
-            color: #ffffff;
-        }
-
-        /* Form Section */
-        .form-section {
-            flex: 1;
-        }
-
-        .form-section h2 {
-            font-size: 20px;
-            color: #171717;
-            margin-bottom: 25px;
-            font-weight: 800;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 12px;
-            font-weight: 700;
-            color: #171717;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #d0d0d0;
-            border-radius: 4px;
-            font-family: 'Arial', sans-serif;
-            font-size: 13px;
-            color: #171717;
-            background-color: #fafafa;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #171717;
-            background-color: #fff;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-
-        .form-group select {
-            cursor: pointer;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 12px;
-            background-color: #171717;
-            color: #ffffff;
-            border: none;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-            transition: background-color 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .submit-btn:hover {
-            background-color: #333333;
-        }
-
-        .submit-btn:active {
-            background-color: #000000;
-        }
-
-        /* Right Panel - 70% */
-        .right-panel {
-            width: 70%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-image: url('luxury-jewelry-hero.jpg');
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .left-panel {
-                width: 100%;
-                height: auto;
-                padding: 30px 20px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            .right-panel {
-                width: 100%;
-                height: 300px;
-            }
-
-            .logo h1 {
-                font-size: 20px;
-            }
-        }
-
-        /* Scrollbar styling */
-        .left-panel::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .left-panel::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        .left-panel::-webkit-scrollbar-thumb {
-            background: #ccc;
-            border-radius: 3px;
-        }
-
-        .left-panel::-webkit-scrollbar-thumb:hover {
-            background: #999;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuxeyDucks B2B Sourcing Portal Hub</title>
+  <style>
+    :root {
+      --bg-main: #0b0b0f;
+      --bg-card: #121218;
+      --bg-input: #1a1a24;
+      --gold-primary: #d4af37;
+      --gold-hover: #f3e5ab;
+      --text-main: #f3f3f6;
+      --text-muted: #a0a0ab;
+      --border-color: #2a2a35;
+      --error-color: #ff4d4d;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg-main); color: var(--text-main); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .hub-container { max-width: 650px; width: 100%; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); text-align: center; }
+    header { border-bottom: 2px solid var(--gold-primary); padding-bottom: 20px; margin-bottom: 30px; }
+    h1 { font-size: 32px; font-weight: 300; letter-spacing: 6px; color: var(--text-main); margin-bottom: 8px; }
+    .subtitle { color: var(--gold-primary); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+    
+    /* Security Gate Styles */
+    #auth-gate { display: block; }
+    .gate-description { color: var(--text-muted); font-size: 14px; margin-bottom: 25px; line-height: 1.6; }
+    .form-group { display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; width: 100%; }
+    .form-group label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold-primary); margin-bottom: 10px; }
+    .password-input { width: 100%; max-width: 320px; background: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-main); padding: 14px; border-radius: 4px; font-size: 16px; text-align: center; letter-spacing: 2px; transition: all 0.3s ease; }
+    .password-input:focus { border-color: var(--gold-primary); outline: none; box-shadow: 0 0 10px rgba(212,175,55,0.2); }
+    .verify-btn { width: 100%; max-width: 320px; background: linear-gradient(135deg, #d4af37 0%, #aa841c 100%); color: #000; border: none; padding: 14px; border-radius: 4px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease; }
+    .verify-btn:hover { background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%); transform: translateY(-1px); box-shadow: 0 5px 15px rgba(212,175,55,0.3); }
+    #error-msg { color: var(--error-color); font-size: 13px; margin-top: 15px; display: none; letter-spacing: 0.5px; }
+    
+    /* Portal Menu Styles */
+    #portal-menu { display: none; animation: fadeIn 0.5s ease forwards; }
+    .menu-description { color: var(--text-muted); font-size: 14px; margin-bottom: 30px; line-height: 1.6; }
+    .portal-grid { display: grid; grid-template-columns: 1fr; gap: 20px; width: 100%; max-width: 450px; margin: 0 auto; }
+    .portal-link { display: flex; align-items: center; justify-content: center; background: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-main); padding: 20px; border-radius: 6px; text-decoration: none; font-size: 15px; font-weight: 500; letter-spacing: 1px; transition: all 0.3s ease; border-left: 4px solid var(--border-color); }
+    .portal-link:hover { border-color: var(--gold-primary); border-left-color: var(--gold-primary); background: #1f1f2e; color: var(--gold-hover); transform: translateX(3px); }
+    .portal-link span { margin-right: 10px; font-size: 20px; }
+    
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Left Panel -->
-        <div class="left-panel">
-            <div class="logo">
-                <img src="luxury-jewelry-hero.jpg" alt="LuxeyDucks Jewelry" class="logo-image">
-                <h1>LUXEYDUCKS</h1>
-            </div>
 
-            <!-- Navigation -->
-            <nav class="navigation">
-                <h3>Navigation</h3>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="loose-diamonds-1-6-carat.html">Loose Diamonds</a></li>
-                    <li><a href="bridal.html">Bridal Sets</a></li>
-                    <li><a href="rings.html">Rings</a></li>
-                    <li><a href="necklaces.html">Necklaces</a></li>
-                    <li><a href="bracelets.html">Bracelets</a></li>
-                    <li><a href="earrings.html">Earrings</a></li>
-                </ul>
-            </nav>
+<div class="hub-container">
+  <header>
+    <h1>LUXEYDUCKS</h1>
+    <div class="subtitle">B2B Sourcing Program Hub</div>
+  </header>
 
-            <div class="form-section">
-                <h2>Request a Quote</h2>
-                <form id="quoteForm">
-                    <div class="form-group">
-                        <label for="company">Company Name</label>
-                        <input type="text" id="company" name="company" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contact">Contact Name</label>
-                        <input type="text" id="contact" name="contact" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="product">Product Interest</label>
-                        <select id="product" name="product" required>
-                            <option value="">-- Select a Product --</option>
-                            <option value="loose-diamonds">Loose Diamonds</option>
-                            <option value="engagement-rings">Engagement Rings</option>
-                            <option value="bridal-sets">Bridal Sets</option>
-                            <option value="necklaces">Necklaces</option>
-                            <option value="bracelets">Bracelets</option>
-                            <option value="earrings">Earrings</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message / Notes</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your requirements..."></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Submit Quote Request</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Right Panel -->
-        <div class="right-panel"></div>
+  <!-- PASSWORD GATE SECTION -->
+  <div id="auth-gate">
+    <p class="gate-description">Welcome, Sourcing Partner. This is a private network. Please enter your corporate verification passphrase to unlock your active procurement matrices.</p>
+    <div class="form-group">
+      <label for="passphrase">Secure Access Token</label>
+      <input type="password" id="passphrase" class="password-input" placeholder="••••••••" onkeypress="handleKeyPress(event)">
     </div>
+    <button class="verify-btn" onclick="verifyToken()">Verify Access</button>
+    <p id="error-msg">Invalid Passphrase Token. Please check your credentials and try again.</p>
+  </div>
 
-    <script>
-        // Form submission handler
-        document.getElementById('quoteForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                company: document.getElementById('company').value,
-                contact: document.getElementById('contact').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                product: document.getElementById('product').value,
-                message: document.getElementById('message').value
-            };
-            
-            console.log('Quote Request Submitted:', formData);
-            alert('Thank you for your quote request! We will contact you shortly.');
-            
-            // Reset form
-            this.reset();
-        });
+  <!-- PORTAL MENU SECTION (UNLOCKED) -->
+  <div id="portal-menu">
+    <p class="menu-description">Authorization successful. Select the department sourcing matrix below to complete your corporate inventory submission:</p>
+    <div class="portal-grid">
+      
+      <!-- Link to Loose Diamond Matrix (re-routed dynamically) -->
+      <a href="luxeyducks-completed-single-diamond-supply-quote-v9.html" class="portal-link">
+        <span>💎</span> Loose Diamond Sourcing Matrix
+      </a>
+      
+      <!-- Link to Tennis Bracelet Matrix -->
+      <a href="bracelets.html" class="portal-link">
+        <span>📿</span> Classic Tennis Bracelet Sourcing Matrix
+      </a>
+      
+    </div>
+  </div>
+</div>
 
-        // Set active link based on current page
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            const navLinks = document.querySelectorAll('.navigation a');
-            
-            navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-        });
-    </script>
+<script>
+  function verifyToken() {
+    const input = document.getElementById('passphrase').value;
+    const errorMsg = document.getElementById('error-msg');
+    const authGate = document.getElementById('auth-gate');
+    const portalMenu = document.getElementById('portal-menu');
+    
+    // Master Access Passcode Handshake
+    if (input === 'LUXEYDUCKS2026') {
+      errorMsg.style.display = 'none';
+      authGate.style.display = 'none';
+      portalMenu.style.display = 'block';
+    } else {
+      errorMsg.style.display = 'block';
+      document.getElementById('passphrase').value = '';
+    }
+  }
+
+  function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      verifyToken();
+    }
+  }
+</script>
+
 </body>
 </html>
