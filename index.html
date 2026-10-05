@@ -3,100 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LuxeyDucks B2B Sourcing Portal Hub</title>
+  <title>LuxeyDucks B2B Sourcing Hub</title>
   <style>
     :root {
-      --bg-main: #0b0b0f;
-      --bg-card: #121218;
-      --bg-input: #1a1a24;
       --gold-primary: #d4af37;
-      --gold-hover: #f3e5ab;
-      --text-main: #f3f3f6;
-      --text-muted: #a0a0ab;
-      --border-color: #2a2a35;
-      --error-color: #ff4d4d;
+      --gold-hover: #b8922a;
+      --text-dark: #111116;
+      --text-muted: #666677;
+      --border-light: #e2e2e8;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background-color: var(--bg-main); color: var(--text-main); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
-    .hub-container { max-width: 650px; width: 100%; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); text-align: center; }
-    header { border-bottom: 2px solid var(--gold-primary); padding-bottom: 20px; margin-bottom: 30px; }
-    h1 { font-size: 32px; font-weight: 300; letter-spacing: 6px; color: var(--text-main); margin-bottom: 8px; }
-    .subtitle { color: var(--gold-primary); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+    body, html { height: 100%; overflow: hidden; background-color: #fff; }
     
-    /* Security Gate Styles */
-    #auth-gate { display: block; }
-    .gate-description { color: var(--text-muted); font-size: 14px; margin-bottom: 25px; line-height: 1.6; }
-    .form-group { display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; width: 100%; }
-    .form-group label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold-primary); margin-bottom: 10px; }
-    .password-input { width: 100%; max-width: 320px; background: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-main); padding: 14px; border-radius: 4px; font-size: 16px; text-align: center; letter-spacing: 2px; transition: all 0.3s ease; }
-    .password-input:focus { border-color: var(--gold-primary); outline: none; box-shadow: 0 0 10px rgba(212,175,55,0.2); }
-    .verify-btn { width: 100%; max-width: 320px; background: linear-gradient(135deg, #d4af37 0%, #aa841c 100%); color: #000; border: none; padding: 14px; border-radius: 4px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease; }
-    .verify-btn:hover { background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%); transform: translateY(-1px); box-shadow: 0 5px 15px rgba(212,175,55,0.3); }
-    #error-msg { color: var(--error-color); font-size: 13px; margin-top: 15px; display: none; letter-spacing: 0.5px; }
+    /* Master Split Container */
+    .split-wrapper { display: flex; width: 100%; height: 100vh; }
     
-    /* Portal Menu Styles */
-    #portal-menu { display: none; animation: fadeIn 0.5s ease forwards; }
-    .menu-description { color: var(--text-muted); font-size: 14px; margin-bottom: 30px; line-height: 1.6; }
-    .portal-grid { display: grid; grid-template-columns: 1fr; gap: 20px; width: 100%; max-width: 450px; margin: 0 auto; }
-    .portal-link { display: flex; align-items: center; justify-content: center; background: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-main); padding: 20px; border-radius: 6px; text-decoration: none; font-size: 15px; font-weight: 500; letter-spacing: 1px; transition: all 0.3s ease; border-left: 4px solid var(--border-color); }
-    .portal-link:hover { border-color: var(--gold-primary); border-left-color: var(--gold-primary); background: #1f1f2e; color: var(--gold-hover); transform: translateX(3px); }
-    .portal-link span { margin-right: 10px; font-size: 20px; }
+    /* LEFT SIDEBAR (20% Width) */
+    .sidebar-left { width: 20%; background: #ffffff; border-right: 1px solid var(--border-light); padding: 40px 25px; display: flex; flex-direction: column; justify-content: space-between; position: relative; z-index: 10; }
+    .brand-block { text-align: left; margin-top: 20px; }
+    .brand-block h1 { font-size: 24px; font-weight: 300; letter-spacing: 5px; color: var(--text-dark); margin-bottom: 5px; }
+    .brand-block p { color: var(--gold-primary); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
     
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    /* Navigation Grid - Hidden Natively Until Password Auth */
+    .navigation-menu { display: none; margin-top: -80px; animation: fadeIn 0.4s ease forwards; }
+    .menu-title { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 15px; font-weight: 600; }
+    .nav-stack { display: flex; flex-direction: column; gap: 12px; }
+    .nav-btn { display: flex; align-items: center; background: #ffffff; border: 1px solid var(--border-light); color: var(--text-dark); padding: 14px 16px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.5px; transition: all 0.25s ease; border-left: 3px solid var(--border-light); }
+    .nav-btn:hover { border-color: var(--gold-primary); border-left-color: var(--gold-primary); color: var(--gold-primary); transform: translateX(2px); background: #fafafc; }
+    .nav-btn span { margin-right: 10px; font-size: 16px; }
+    .sidebar-footer { font-size: 11px; color: var(--text-muted); letter-spacing: 0.5px; }
+    
+    /* RIGHT HERO CANVAS (80% Width) */
+    .hero-right { width: 80%; position: relative; background: #070709; }
+    .campaign-img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+    .image-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%); }
+
+    /* SIGN IN GATE (Overlayed beautifully on right side image) */
+    .auth-overlay-card { position: absolute; top: 50%; left: 10%; transform: translateY(-50%); max-width: 400px; width: 90%; background: rgba(11, 11, 15, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); text-align: center; color: #fff; transition: all 0.4s ease; }
+    .auth-overlay-card p { font-size: 13px; color: #ccced6; line-height: 1.6; margin-bottom: 25px; font-weight: 300; }
+    .pass-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold-primary); display: block; margin-bottom: 12px; font-weight: 500; }
+    .pass-input { width: 100%; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.15); color: #fff; padding: 14px; border-radius: 4px; font-size: 16px; text-align: center; letter-spacing: 3px; margin-bottom: 20px; transition: all 0.3s ease; }
+    .pass-input:focus { border-color: var(--gold-primary); outline: none; box-shadow: 0 0 10px rgba(212,175,55,0.3); }
+    .submit-btn { width: 100%; background: linear-gradient(135deg, #d4af37 0%, #aa841c 100%); color: #000; border: none; padding: 14px; border-radius: 4px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease; }
+    .submit-btn:hover { background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%); transform: translateY(-1px); }
+    .error-text { color: #ff4d4d; font-size: 12px; margin-top: 15px; display: none; letter-spacing: 0.5px; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 992px) { .sidebar-left { width: 30%; } .hero-right { width: 70%; } }
   </style>
 </head>
 <body>
 
-<div class="hub-container">
-  <header>
-    <h1>LUXEYDUCKS</h1>
-    <div class="subtitle">B2B Sourcing Program Hub</div>
-  </header>
-
-  <!-- PASSWORD GATE SECTION -->
-  <div id="auth-gate">
-    <p class="gate-description">Welcome, Sourcing Partner. This is a private network. Please enter your corporate verification passphrase to unlock your active procurement matrices.</p>
-    <div class="form-group">
-      <label for="passphrase">Secure Access Token</label>
-      <input type="password" id="passphrase" class="password-input" placeholder="••••••••" onkeypress="handleKeyPress(event)">
+<div class="split-wrapper">
+  
+  <!-- LEFT SIDEBAR CONTROL PANEL (20%) -->
+  <aside class="sidebar-left">
+    <div class="brand-block">
+      <h1>LUXEYDUCKS</h1>
+      <p>Procurement Hub</p>
     </div>
-    <button class="verify-btn" onclick="verifyToken()">Verify Access</button>
-    <p id="error-msg">Invalid Passphrase Token. Please check your credentials and try again.</p>
-  </div>
 
-  <!-- PORTAL MENU SECTION (UNLOCKED) -->
-  <div id="portal-menu">
-    <p class="menu-description">Authorization successful. Select the department sourcing matrix below to complete your corporate inventory submission:</p>
-    <div class="portal-grid">
-      
-      <!-- Link to Loose Diamond Matrix (re-routed dynamically) -->
-      <a href="luxeyducks-completed-single-diamond-supply-quote-v9.html" class="portal-link">
-        <span>💎</span> Loose Diamond Sourcing Matrix
-      </a>
-      
-      <!-- Link to Tennis Bracelet Matrix -->
-      <a href="bracelets.html" class="portal-link">
-        <span>📿</span> Classic Tennis Bracelet Sourcing Matrix
-      </a>
-      
+    <!-- Active Navigation Core - Unlocks seamlessly via Auth Handshake -->
+    <div id="active-menu" class="navigation-menu">
+      <h2 class="menu-title">Sourcing Matrices</h2>
+      <nav class="nav-stack">
+        <a href="loose-diamonds-1-6-carat.html" class="nav-btn"><span>💎</span> Loose Diamond Matrix</a>
+        <a href="bracelets.html.html" class="nav-btn"><span>📿</span> Tennis Bracelet Matrix</a>
+        <a href="earrings.html" class="nav-btn"><span>✨</span> Stud Earring Matrix</a>
+        <a href="necklaces.html" class="nav-btn"><span>👑</span> Statement Necklace Matrix</a>
+        <a href="rings.html" class="nav-btn"><span>💍</span> Fine Rings & Bands</a>
+        <a href="bridal.html" class="nav-btn"><span>🌹</span> Bridal Sourcing Array</a>
+      </nav>
     </div>
-  </div>
+
+    <div class="sidebar-footer">
+      <p>&copy; 2026 LuxeyDucks Co.</p>
+    </div>
+  </aside>
+
+  <!-- RIGHT EDITORIAL IMAGE BLOCK (80%) -->
+  <section class="hero-right">
+    <img src="https://unsplash.com" alt="LuxeyDucks Luxury Sourcing Editorial" class="campaign-img">
+    <div class="image-overlay"></div>
+
+    <!-- Secure Authorization Gate Card Overlayed on Image Surface -->
+    <div id="login-card" class="auth-overlay-card">
+      <span class="pass-label">Private Sourcing Network</span>
+      <p>Please enter your corporate verification passphrase token to unlock active department matrices.</p>
+      <div style="width: 100%;">
+        <input type="password" id="passphrase" class="pass-input" placeholder="••••••••" onkeypress="handleKeyPress(event)">
+      </div>
+      <button class="submit-btn" onclick="verifyToken()">Verify Access</button>
+      <p id="error-alert" class="error-text">Invalid token credentials. Please try again.</p>
+    </div>
+  </section>
+
 </div>
 
 <script>
   function verifyToken() {
-    const input = document.getElementById('passphrase').value;
-    const errorMsg = document.getElementById('error-msg');
-    const authGate = document.getElementById('auth-gate');
-    const portalMenu = document.getElementById('portal-menu');
+    const token = document.getElementById('passphrase').value;
+    const errorAlert = document.getElementById('error-alert');
+    const loginCard = document.getElementById('login-card');
+    const activeMenu = document.getElementById('active-menu');
     
-    // Master Access Passcode Handshake
-    if (input === 'LUXEYDUCKS2026') {
-      errorMsg.style.display = 'none';
-      authGate.style.display = 'none';
-      portalMenu.style.display = 'block';
+    // Private Network Master Passcode
+    if (token === 'LUXEYDUCKS2026') {
+      errorAlert.style.display = 'none';
+      loginCard.style.opacity = '0';
+      setTimeout(() => { loginCard.style.display = 'none'; }, 400);
+      activeMenu.style.display = 'block';
     } else {
-      errorMsg.style.display = 'block';
+      errorAlert.style.display = 'block';
       document.getElementById('passphrase').value = '';
     }
   }
