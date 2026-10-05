@@ -30,7 +30,7 @@
     .sidebar-footer { font-size: 11px; color: var(--text-muted); letter-spacing: 0.5px; }
 
     .hero-right { width: 80%; position: relative; background: #070709; overflow: hidden; }
-    .campaign-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; pointer-events: none; display: block; }
+    .campaign-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; pointer-events: none; display: block; z-index: 0; }
     .image-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%); z-index: 1; }
 
     .auth-overlay-card { position: absolute; top: 50%; left: 10%; transform: translateY(-50%); max-width: 400px; width: 90%; background: rgba(11, 11, 15, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); z-index: 2; transition: opacity 0.4s ease; }
@@ -73,7 +73,7 @@
   </aside>
 
   <section class="hero-right">
-    <img src="luxury-jewelry-hero.jpg" alt="LuxeyDucks Luxury Sourcing Editorial" class="campaign-img" width="1248" height="828">
+    <img src="luxury-jewelry-hero.jpg" alt="LuxeyDucks Luxury Sourcing Editorial" class="campaign-img" width="1248" height="832">
     <div class="image-overlay"></div>
 
     <div id="login-card" class="auth-overlay-card">
