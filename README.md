@@ -6,11 +6,6 @@ This repository hosts the LuxeyDucks B2B Sourcing Hub GitHub Pages site.
 
 The public site is served from the repository root and should load `index.html` at the site root.
 
-Category pages are available as standalone HTML files in the repository root, including:
-- `earrings.html`
-- `necklaces.html`
-- `rings.html`
-- `bridal.html`
-- `loose-diamonds-1-6-carat.html`
+The old pages have been removed; `index.html` is a minimal placeholder until the new site and navigation files are added.
 
 If a page is not updating on GitHub Pages, make sure the repository Pages source is set to the `main` branch and the root folder.
