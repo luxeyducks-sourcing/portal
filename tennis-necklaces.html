@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LuxeyDucks Tennis Necklace 14k Yellow and White Gold Pricing Request</title>
+<style>
+:root{--ink:#171717;--soft:#f3f0ea;--entry:#fff2b8;--line:#777}*{box-sizing:border-box}body{margin:0;background:#eee;color:var(--ink);font-family:Arial,sans-serif}.toolbar{position:sticky;top:0;z-index:5;background:#171717;color:#fff;padding:12px 18px;display:flex;gap:10px;align-items:center}.toolbar button{background:#fff;color:#111;border:0;border-radius:4px;padding:10px 14px;font-weight:700;cursor:pointer}.toolbar span{margin-left:auto;font-size:12px}.packet{max-width:1400px;margin:20px auto;background:#fff;padding:28px}.cover{max-width:1100px;margin:auto}.brand{font-size:27px;font-weight:800;letter-spacing:.04em}.subtitle{font-size:17px;margin:6px 0 20px}.summary{display:grid;grid-template-columns:150px 1fr 150px 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin:15px 0}.summary>*{background:#fff;padding:8px}.summary strong{background:var(--soft)}.summary input{width:100%;border:0;background:var(--entry);font:inherit;min-height:22px}.section-title{background:var(--soft);padding:9px 11px;font-size:16px;font-weight:800;margin:20px 0 8px}.cover p,.cover li{line-height:1.4}.quality{font-weight:700}.scope{font-size:13px}.quote-group{page-break-before:always;margin:28px auto;max-width:1400px}.quote-group h2{font-size:20px;margin:0 0 6px}.group-note{font-size:12px;margin:0 0 10px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:11px}th,td{border:1px solid var(--line);padding:6px;vertical-align:middle;overflow-wrap:anywhere}th{background:#222;color:#fff;text-align:left;height:42px}th:nth-child(1){width:10%}th:nth-child(2){width:10%}th:nth-child(3){width:16%}th:nth-child(4){width:16%}th:nth-child(5){width:14%}th:nth-child(6){width:16%}th:nth-child(7){width:18%}td.fixed{background:#f1f1f1;font-weight:700}td.entry{background:var(--entry);height:43px}td.entry input,td.entry textarea{width:100%;min-height:26px;border:0;background:transparent;font:inherit;font-size:12px}td.entry textarea{height:32px;resize:vertical}.foot{font-size:9px;color:#555;margin-top:5px}@page{size:landscape;margin:.35in}@media print{body{background:#fff}.toolbar{display:none}.packet{max-width:none;margin:0;padding:0}.cover{max-width:none;page-break-after:always;break-after:page}.quote-group{max-width:none;margin:0;page-break-before:always;break-before:page;page-break-inside:avoid;break-inside:avoid}.table-wrap{overflow:visible}table{font-size:10px}th,td{padding:5px}td.entry{height:40px}.summary,.section-title{break-inside:avoid;page-break-inside:avoid}}
+.toolbar{flex-wrap:wrap}.home-button,.submit-footer button{display:inline-block;border:0;border-radius:4px;background:#fff;color:#111;padding:10px 14px;font:700 13px Arial,sans-serif;text-decoration:none}.toolbar button:disabled,.submit-footer button:disabled{opacity:.55;cursor:not-allowed}.submit-footer{margin-top:28px;padding:18px;background:var(--soft);text-align:center}.submit-footer button{background:#222;color:#fff}.submit-footer p{font-size:12px;line-height:1.5}
+@page{size:letter landscape;margin:.35in}
+@media print{.submit-footer{display:none}.cover{page-break-after:auto;break-after:auto;margin-bottom:16px}.quote-group:first-child{page-break-before:auto;break-before:auto}.quote-group{page-break-inside:auto;break-inside:auto}.quote-group h2,.group-note{page-break-after:avoid;break-after:avoid}thead{display:table-header-group}tr{page-break-inside:avoid;break-inside:avoid}td.entry textarea{height:32px;resize:none;overflow:visible}input,textarea{color:#000}.entry,.fixed,th,.summary strong{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="toolbar"><a class="home-button" href="./index.html">Home Page</a><button type="button" disabled title="Submission connection is not yet configured">Submit Quote</button><button onclick="window.print()">Print / Save as PDF</button><button onclick="clearSaved()">Clear saved entries</button><span>Yellow cells are for partner entry · Landscape print layout</span></div>
+<div class="packet">
+<section class="cover">
+  <div class="brand">LUXEYDUCKS</div>
+  <div class="subtitle">14k Yellow and White Gold · Lab-Grown Round Brilliant Tennis Necklace</div>
+  <div class="summary">
+    <strong>Partner Company</strong><div><input data-save="partner" aria-label="Partner Company"></div>
+    <strong>Representative</strong><div><input data-save="representative" aria-label="Representative"></div>
+    <strong>Email</strong><div><input type="email" data-save="email" aria-label="Email"></div>
+    <strong>Quote date</strong><div><input data-save="quote-date" aria-label="Quote date" placeholder="YYYY-MM-DD"></div>
+  </div>
+  <p class="foot">Carat weights are the current LuxeyDucks variant values for each diamond-size and chain-length combination.</p>
+</section>
+<div id="groups"></div>
+<div class="submit-footer"><button type="button" disabled title="Submission connection is not yet configured">Submit Quote</button><p>Submission is not connected yet. Once configured, quotes will be delivered to Sourcing.Luxeyducks@icloud.com. No email is sent by this preview.</p></div>
+</div>
+<script>
+const necklaceWeights={
+  Petite:{'15"':'6.0','16"':'6.4','17"':'6.8','18"':'7.2'},
+  Medium:{'15"':'11.5','16"':'12.2','17"':'13.0','18"':'13.7'},
+  Large:{'15"':'18.8','16"':'20.0','17"':'21.2','18"':'22.6'}
+};
+const groups=[];
+for(const size of Object.keys(necklaceWeights)) groups.push({name:`Tennis Necklace · ${size}`,size,weights:necklaceWeights[size]});
+function makeInput(id,isNotes=false){const e=isNotes?document.createElement('textarea'):document.createElement('input');e.dataset.save=id;e.setAttribute('aria-label',id);if(!isNotes)e.placeholder='';return e;}
+function saveAll(){document.querySelectorAll('[data-save]').forEach(e=>{try{localStorage.setItem('luxeyducks-necklace-'+e.dataset.save,e.value)}catch(_){}})}
+function restoreAll(){document.querySelectorAll('[data-save]').forEach(e=>{try{e.value=localStorage.getItem('luxeyducks-necklace-'+e.dataset.save)||''}catch(_){}})}
+function clearSaved(){if(!confirm('Clear all entered quote responses saved on this device?'))return;document.querySelectorAll('[data-save]').forEach(e=>{e.value='';try{localStorage.removeItem('luxeyducks-necklace-'+e.dataset.save)}catch(_){}})}
+document.addEventListener('input',saveAll);
+const root=document.getElementById('groups');
+groups.forEach((group,index)=>{
+  const section=document.createElement('section');section.className='quote-group';
+  section.innerHTML=`<h2>${group.name}</h2><p class="group-note">Quality: F / VS1 · Ideal-cut lab-grown round brilliant · 14k Yellow Gold and 14k White Gold</p>`;
+  const wrap=document.createElement('div');wrap.className='table-wrap';
+  const table=document.createElement('table');
+  table.innerHTML='<thead><tr><th>Chain length</th><th>Total carat weight</th><th>Finished price · 14k Yellow Gold (USD)</th><th>Finished price · 14k White Gold (USD)</th><th>Certificate / report cost per piece (USD)</th><th>Insured dropship shipping + handling per order (USD)</th><th>Notes / inclusions / N/A reason</th></tr></thead>';
+  const tbody=document.createElement('tbody');let row=0;
+  for(const [length,weight] of Object.entries(group.weights)){
+    const tr=document.createElement('tr');
+    const lengthCell=document.createElement('td');lengthCell.className='fixed';lengthCell.textContent=length;tr.appendChild(lengthCell);
+    const weightCell=document.createElement('td');weightCell.className='fixed';weightCell.textContent=weight+' ctw';tr.appendChild(weightCell);
+    for(let col=0;col<5;col++){
+      const td=document.createElement('td');td.className='entry';
+      td.appendChild(makeInput(`g${index}-r${row}-c${col}`,col===4));tr.appendChild(td);
+    }
+    tbody.appendChild(tr);row++;
+  }
+  table.appendChild(tbody);wrap.appendChild(table);section.appendChild(wrap);
+  const foot=document.createElement('p');foot.className='foot';foot.textContent='If a requested metal/size combination is unavailable, mark N/A and explain in Notes.';section.appendChild(foot);root.appendChild(section);
+});
+restoreAll();
+</script>
+</body>
+</html>
