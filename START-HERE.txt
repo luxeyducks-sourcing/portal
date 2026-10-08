@@ -1,0 +1,90 @@
+LUXEYDUCKS — START HERE
+Prepared October 6, 2026
+
+This is the current design-draft handoff, not a live working submission system.
+Use this set instead of mixing earlier dated downloads.
+Keep all filenames and folders exactly as supplied.
+
+FIRST STEPS
+1. Extract the archive on your Mac. Keep the extracted folder together.
+2. Open site/index.html in your browser to review the Partner Forms home page.
+3. Open site/internal/index.html to review your Private Studio.
+4. Open site/customer/jewelry-concierge.html to review the customer intake draft.
+5. Do not publish sensitive information until real access protection is tested.
+Do not delete your old site yet. Keep it as a backup.
+
+FOLDER MAP
+START-HERE.txt — this guide; not a website page.
+site/
+  index.html — Partner Forms home; includes Product Request navigation.
+  loose-diamonds.html — loose-stone partner pricing.
+  stud-earrings.html — stud-earring partner pricing.
+  tennis-bracelets.html — bracelet partner pricing.
+  tennis-necklaces.html — necklace partner pricing.
+  partner-product-request.html — new-design technical brief and partner response.
+  internal/
+    index.html — your Private Studio home.
+    jewelry-request.html — internal intake, review, costs, and approvals.
+    ring-quote-builder.html — editable customer-ready quotation builder.
+  customer/
+    jewelry-concierge.html — customer consultation intake draft.
+
+WHO USES WHAT
+PARTNERS: the top-level pricing forms and Product Request.
+LUXEYDUCKS STAFF ONLY: everything in internal/.
+CUSTOMERS: Jewelry Concierge; later, a reviewed PDF exported from the ring quote builder.
+Never send the internal Jewelry Request PDF to a partner or customer. It contains private fields.
+Do not send the editable quote builder to a customer; send the reviewed quotation PDF.
+
+HOW A CUSTOM PROJECT MOVES
+Customer consultation request -> LuxeyDucks internal review -> approved partner brief -> partner response -> LuxeyDucks pricing/review -> customer quotation -> documented design approval -> explicit production authorization.
+These are separate drafts. Data is NOT transferred between them automatically.
+Use the same project ID and revision manually until a backend is connected.
+A request, a quote, and a design reference are NOT purchase orders or production authorization.
+
+WHAT WORKS IN THESE DRAFTS
+Navigation between the packaged local HTML pages.
+Editable fields and local image previews where provided.
+Embedded branding/reference images: no separate image downloads required.
+Browser Print / Save as PDF, with controls hidden where configured.
+The four pricing forms contain device-local autosave logic; this is not server storage and browser support varies.
+
+WHAT IS NOT CONNECTED
+Sign-in/access protection, email delivery, submission storage, server-side uploads.
+Automatic transfer of project data between pages.
+Automatic financial calculations in the request forms.
+Autosave for the request forms, customer intake, and ring quotation builder.
+Customer name/email required-field enforcement on the customer draft.
+Customer privacy notice and final submission/consent wording.
+All submit/sign-in buttons remain disabled placeholders.
+
+IMPORTANT IMAGE / PDF NOTES
+Image selectors provide local previews, NOT uploads to a server.
+Images fit their frames without stretching; underlying files are not resized or compressed.
+Local replacements and unsaved edits disappear when the page is closed/reloaded.
+Save a PDF before closing. Check every page before sending it.
+PDFs have not been rendered/visually validated here. Long notes and descriptions can overflow or add pages.
+Do not call the quote a guaranteed one-page PDF until tested with realistic content.
+
+HOSTING PLAN
+GitHub: source/version control. Do not commit completed quotes, customer details, credentials, or confidential prices to a public repository.
+Cloudflare: planned hosting/access/submission setup; no configuration is included or completed here.
+Apple Numbers: planned internal costing/margin workbook; no workbook or live integration is included.
+Only the contents of site/ are website files. Keep this guide outside the published site.
+An internal folder does NOT secure its contents. Protect every internal URL and partner form, not just home pages.
+The customer intake must be deployed/routed deliberately; there is no customer home page or link from partner navigation.
+
+NEXT STEPS, IN ORDER
+1. Review the local navigation and mobile layouts.
+2. Print realistic completed samples and check PDF layouts, especially Round Signature.
+3. Configure hosting and real access protection for partner and staff areas.
+4. Connect submission/storage and secure image uploads; validate data on the server.
+5. Send test partner quotes to Sourcing.Luxeyducks@icloud.com and verify receipt.
+6. Add customer validation/privacy wording and test customer consultation delivery separately.
+7. Prepare a Numbers import and margin workbook.
+8. Enable submission buttons only after end-to-end tests pass.
+
+PAUSED / NOT INCLUDED
+Classic Tennis Bracelet partner-specification v3 remains paused.
+Earlier drafts and separate duplicate bracelet pricing forms are intentionally excluded.
+No changes have been published to Shopify, GitHub, or Cloudflare.
